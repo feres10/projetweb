@@ -1,0 +1,223 @@
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Structure la page avec une disposition verticale */
+}
+
+
+/* Header */
+header {
+    background-color: #0f172a;
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h2 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+header a {
+    color: #38bdf8;
+    text-decoration: none;
+    margin: 0 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #a5f3fc;
+}
+
+
+nav {
+    flex: 1; /* Prend tout l'espace restant */
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(to bottom, #38bdf8, white);
+}
+nav#iit{
+    background-image: url(../images/campus.webp);
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    padding: 20px; /* Adjust padding as required */
+}
+#profile {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #38bdf8;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease;
+    box-shadow: 10px 15px 30px rgba(34, 34, 34, 0.2);
+}
+
+#profile:hover {
+    transform: scale(1.1);
+}
+
+nav p {
+    color: white;
+    font-style: italic;
+    margin: 0 auto;
+    background: #0f172a;
+    padding: 2rem;
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    line-height: 1.8;
+    width: 93.95%;
+    
+}
+nav strong {
+    font-size: 25px;
+}
+.section {
+    display: flex; /* Utilisation de Flexbox pour aligner le texte et l'image */
+    justify-content: space-between; /* Espacement entre le texte et l'image */
+    align-items: center; /* Centrage vertical */
+    border-radius: 12px;
+    margin: 0 auto;
+    margin: 10px;
+    background-color: #101828; /* Couleur de fond pour une belle séparation */
+    padding: 2rem;
+    margin-bottom: 10px; /* Espace entre les sections */
+    border-radius: 12px;
+    color: #ffffff; /* Couleur du texte */
+}
+
+
+.small-image {
+    width: 150px; /* Taille de l'image */
+    height: auto; /* Maintien du ratio de l'image */
+    border: 2px solid #ddd; /* Bordure légère autour de l'image */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre pour un effet 3D */
+}
+
+
+
+
+
+.home {
+    position: fixed;
+    bottom: 20px; /* Distance par rapport au bas de la page */
+    right: 20px; /* Distance par rapport au bord droit de la page */
+    width: 50px; /* Ajustez la taille de l'image selon vos besoins */
+    height: auto; /* Conserve les proportions de l'image */
+    z-index: 1000; /* Assurez-vous qu'elle reste au-dessus des autres éléments */
+    border-radius: 50%;
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease; /* Animation fluide */
+    cursor: pointer; /* Change le curseur pour indiquer qu'elle est cliquable */
+}
+.home:active {
+    transform: scale(1.2); /* Agrandit l'image lorsqu'on clique */
+    width: 60px; /* Augmente la largeur pendant le clic */
+    height: 60px; /* Augmente la hauteur pendant le clic */
+}
+
+/* Footer */
+footer {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer .social-links {
+    margin: 1rem 0;
+}
+
+footer .social-links a {
+    margin: 0 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+footer .social-links img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+footer .social-links img:hover {
+    transform: scale(1.2);
+    background-color: #38bdf8;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+header,
+nav,
+footer {
+    animation: fadeIn 1s ease-out;
+}
+
+footer p {
+    font-style: italic;
+    font-size: 1rem;
+    margin: 1rem 0;
+    line-height: 1.8;
+    text-align: left;
+    padding-left: 20px;
+    color: #38bdf8;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h2 {
+        font-size: 1.8rem;
+    }
+
+    nav img {
+        width: 140px;
+        height: 140px;
+    }
+
+    footer .social-links img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+
+
+
